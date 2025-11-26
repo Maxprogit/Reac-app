@@ -3,6 +3,7 @@ import './App.css'
 import Test from './components/test'
 import Fruits from './components/arrayFrutas'
 import Inventory from './components/Inventory'
+import UserRegister from './components/userRegister'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,7 +11,7 @@ function App() {
   return (
     <>
       <div>
-        <Fruits />
+        <UserRegister />
       </div>
       
       <div className="card">

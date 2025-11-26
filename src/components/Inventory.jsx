@@ -41,21 +41,21 @@ const Inventory = () => {
     return (
         <>
             <div>
-                <h1>Lista de productos</h1>
+                <h1>Products list</h1>
                 <input type="text" onChange={handleEvent} value={products}/>
                 <ul>
                     {list.map((l)=> (
                         <li key={l}>{l}
                             <span>
-                                <button onClick={delProduct} value={l}>Eliminar</button>
+                                <button onClick={delProduct} value={l}>Delete product</button>
                             </span>
                         </li>
                     ))}
                 </ul>
-                <button onClick={addProduct}>agregar producto</button>
-                <p>Productos agregados: {list.length}</p>
+                <button onClick={addProduct}>Add product</button>
+                <p>Added products: {list.length}</p>
 
-                <button onClick={delAllProducts}>Vaciar lista</button>
+                <button onClick={delAllProducts}>Remove all products</button>
             </div>
         </>
     )
