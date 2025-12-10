@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-import Test from './components/test'
-import Fruits from './components/arrayFrutas'
 import Inventory from './components/Inventory'
 import UserRegister from './components/userRegister'
+import ToDo from './components/To-DoList'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -18,6 +16,10 @@ function App() {
         
       <Inventory />
       
+      </div>
+
+      <div>
+        <ToDo />
       </div>
       <p className="read-the-docs">
         

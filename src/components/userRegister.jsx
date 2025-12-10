@@ -25,7 +25,7 @@ const UserRegister = () => {
     
 
     const addUser = () => {
-        if(form.name === "" || form.email === "" || form.age <= 0) return; // VALIDACION DE INPUTS
+        if(form.name === "" || form.email === "" || form.age <= 0) return; // Validacion de inputs
 
         let repeatedMail = false;
         for(let i = 0; i < user.length; i++) {
