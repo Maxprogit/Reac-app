@@ -1,7 +1,7 @@
 /**
  * React Practice Lab - Reto [3]: To-Do List
  * Autor: MaxProGit
- * Fecha: [fecha]
+ * Fecha: [10/12/2025]
  * Versión del componente: [0.3.0]
  * Descripción: Lista de tareas con estados dinámicos, control de completado,
  * validación de duplicados y contadores derivados.
@@ -50,11 +50,9 @@ const ToDo = () => {
         setTask([...task, newTask]);
         setList({title: ""});
     }
-
     const handleEvent = (e) => {
         setList({...lists, [e.target.name]: e.target.value});
     }
-
     const taskCompleted = (id) => {
         //creamos una copia de las tareas
         const updated = [...task];
@@ -71,7 +69,6 @@ const ToDo = () => {
     const delTask = (id) => {
         setTask(task.filter((t) => t.id !== id));
     };
-
 
     return (
         <>

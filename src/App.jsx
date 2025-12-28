@@ -3,6 +3,7 @@ import './App.css'
 import Inventory from './components/Inventory'
 import UserRegister from './components/userRegister'
 import ToDo from './components/To-DoList'
+import UserLogin from './components/userLogin'
 
 function App() {
 
@@ -14,13 +15,14 @@ function App() {
       
       <div className="card">
         
-      <Inventory />
+      <UserLogin />
       
       </div>
 
       <div>
         <ToDo />
       </div>
+      
       <p className="read-the-docs">
         
       </p>
