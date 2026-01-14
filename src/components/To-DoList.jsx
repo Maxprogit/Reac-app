@@ -72,8 +72,8 @@ const ToDo = () => {
 
     return (
         <>
-            <div>
-                <h1>To-Do List</h1>
+            <div className="">
+                <h1 className="font-serif ...">To-Do List</h1>
 
                 <input name="title" type="text" placeholder="Title" onChange={handleEvent} value={lists.title}/>
                 

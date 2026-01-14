@@ -13,6 +13,7 @@
  */
 
 import { useState } from "react";
+import Dashboard from "./Dashboard";
 
 const UserLogin = () => {
  
@@ -53,6 +54,11 @@ const UserLogin = () => {
         setError("");
         setIsAuthenticated(true);
     }
+
+    const onLogout = () => {
+        setIsAuthenticated(false);
+        setUserLogin({email: "", password: ""});
+    }
     
 
 
@@ -61,15 +67,35 @@ const UserLogin = () => {
         <>
 
           {isAuthenticated ? (
-            <h2>Bienvenido {userLogin.email}</h2>
+            <Dashboard email = {userLogin.email} onLogout={onLogout}/>
           ) : (
-            <div>
-                <h1>User Login</h1>
-                <input name="email" type="email" placeholder="email" onChange={handleEventLogin} value={userLogin.email}/>
-                <input name="password" type="password" placeholder="password" onChange={handleEventLogin} value={userLogin.password}/>
-                <button onClick={validateLogin}>Login</button>
+            <div className="border-4 border-indigo-500/50">
+                <h1 className="font-serif ...">User Login</h1>
+                <input className="border-2 border-gray-700 focus:border-pink-600 ..." name="email" type="email" placeholder="email" onChange={handleEventLogin} value={userLogin.email}/>
+                <input className="border-2 border-gray-700 focus:border-pink-600" name="password" type="password" placeholder="password" onChange={handleEventLogin} value={userLogin.password}/>
+                <button className="relative m-0 h-auto cursor-pointer border-0 bg-transparent p-0 
+                text-transparent uppercase tracking-[3px] 
+                font-[Arial] text-[2em]
+                [-webkit-text-stroke:1px_rgba(255,255,255,0.6)]
+                group"
+                onClick={validateLogin}>Login
+
+            <span
+                data-text="Button"
+                className="absolute inset-0 box-border w-0 overflow-hidden
+                    text-[#37FF8B]
+                    border-r-[6px] border-[#37FF8B]
+                    transition-all duration-500
+                    [-webkit-text-stroke:1px_#37FF8B]
+                    group-hover:w-full
+                    group-hover:drop-shadow-[0_0_23px_#37FF8B]"
+            >
+            Login
+            </span>
+
+          </button>
                 {/* manejador de errores */}
-                {error && <p class="underline decoration-pink-500">{error}</p>}
+                {error && <p className="relative w-full max-w-64 flex flex-wrap items-center justify-center py-3 pl-4 pr-14 rounded-lg text-base font-medium [transition:all_0.5s_ease] border-solid border border-[#f85149] text-[#b22b2b] [&amp;_svg]:text-[#b22b2b] group bg-[linear-gradient(#f851491a,#f851491a)]">{error}</p>}
             </div>
           )}
         </>

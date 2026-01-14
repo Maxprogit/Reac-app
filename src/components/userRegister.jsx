@@ -56,8 +56,8 @@ const UserRegister = () => {
 
     return (
         <>
-            <div>
-                <h1>User Register</h1>
+            <div className="min-h-screen flex flex-col font-display selection:bg-[#f2a20d] selection:text-[#221c10] overflow-hidden">
+                <h1 className="font-serif ...">User Register</h1>
                 
                     <input name="name" type="text" placeholder="name" onChange={handleEvent} value={form.name}/>
                     <input name="email" type="email" placeholder="email" onChange={handleEvent} value={form.email}/> 
@@ -73,7 +73,26 @@ const UserRegister = () => {
                             </li>
                         ))}
                     </ul>
-                    <button onClick={addUser}>Add user</button>
+                    <button className="relative m-0 h-auto cursor-pointer border-0 bg-transparent p-0 
+                        text-transparent uppercase tracking-[3px] 
+                        font-[Arial] text-[2em]
+                        [-webkit-text-stroke:1px_rgba(255,255,255,0.6)]
+                        group"
+                        onClick={addUser}>Register
+                    
+                        <span
+                            data-text="Button"
+                            className="absolute inset-0 box-border w-0 overflow-hidden
+                                text-[#37FF8B]
+                                border-r-[6px] border-[#37FF8B]
+                                transition-all duration-500
+                                [-webkit-text-stroke:1px_#37FF8B]
+                                group-hover:w-full
+                                group-hover:drop-shadow-[0_0_23px_#37FF8B]"
+                        >
+                            Register
+                        </span>
+                    </button>
                 
             </div>
         </>

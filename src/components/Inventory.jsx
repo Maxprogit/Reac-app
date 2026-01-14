@@ -40,9 +40,9 @@ const Inventory = () => {
 
     return (
         <>
-            <div>
+            <div className="">
                 <h1>Products list</h1>
-                <input type="text" onChange={handleEvent} value={products}/>
+                <input type="text" onChange={handleEvent} value={products} placeholder="Agregar producto"/>
                 <ul>
                     {list.map((l)=> (
                         <li key={l}>{l}
