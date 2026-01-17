@@ -1,0 +1,69 @@
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+    }
+::-webkit-scrollbar-track {
+    background: #1a160e
+    }
+::-webkit-scrollbar-thumb {
+    background: #5c400d;
+    border-radius: 2px
+    }
+/* Scanline Effect */
+.scanlines::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 4px;
+    z-index: 50;
+    pointer-events: none
+    }
+/* CRT Flicker Animation (Optional but adds flavor, kept subtle) */
+@keyframes flicker {
+    0% {
+        opacity: 0.97;
+        } 5% {
+        opacity: 0.95;
+        } 10% {
+        opacity: 0.9;
+        } 15% {
+        opacity: 0.95;
+        } 20% {
+        opacity: 0.99;
+        } 100% {
+        opacity: 0.97;
+        }
+    }
+
+.crt-flicker {
+    animation: flicker 0.15s infinite
+    }
+/* Amber Glow Utilities */
+.glow-text {
+    text-shadow: 0 0 5px rgba(242, 162, 13, 0.5)
+    }
+.glow-box {
+    box-shadow: 0 0 10px rgba(242, 162, 13, 0.1), inset 0 0 20px rgba(242, 162, 13, 0.05)
+    }
+.border-glow {
+    box-shadow: 0 0 4px rgba(242, 162, 13, 0.4)
+    }
+/* Custom Checkbox Appearance */
+.custom-checkbox:checked {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuD3Ds-SHqk9xKTKkJY-RIyE3JKoPBhvpX-UBrS5fy8UGiE5hGJDpEO0lY7Fdcky_L7W6mx2zVuZGX5wwufz9Ahc5Ia0jwAVOX0flZu14VLpb44o7aSu5ph3GNUuKuIQ3nUJ5CRGOAH51Nfzhi6KI8Vuyk08l-Iwabh9WiK1FSWNaDa8pUb7NjDzQ4pSO2uxgoYNXZqy_2iCbCmRvhSy_tJ7WQGCKQNf9_cQEqU4_q--bA-Q2kj20NN5DeqEXPgPNb3pYjfDkf4_Cg)
+    }
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
