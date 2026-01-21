@@ -73,7 +73,8 @@ const ToDo = () => {
     <>
       <div className="bg-[#f8f7f5] dark:bg-[#181611] font-display text-white overflow-x-hidden min-h-screen flex flex-col pb-20 md:pb-0">
         {/* Scanline Overlay */}
-        <div className="fixed inset-0 z-50 scanlines opacity-10 pointer-events-none"></div>
+        <div class="scanlines"></div>
+        <div class="noise"></div>
         {/* <!-- Main Layout --> */}
         <div className="layout-container flex h-full grow flex-col relative z-10">
           {/* <!-- Header --> */}

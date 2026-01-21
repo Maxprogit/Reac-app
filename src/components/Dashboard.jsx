@@ -76,9 +76,9 @@ const Dashboard = ({ email, onLogout }) => {
                   LOGS
                 </span>
               </a>
-              <button onClick={() =>navigate("/Tasks")}
+              <button
+                onClick={() => navigate("/Tasks")}
                 className="flex items-center gap-3 px-3 py-3 rounded hover:bg-[#f2a20d]/10 text-[#f2a20d]/70 hover:text-[#f2a20d] transition-all group border border-transparent hover:border-[#f2a20d]/30"
-                
               >
                 <span className="material-symbols-outlined text-2xl">
                   check_box
@@ -87,10 +87,13 @@ const Dashboard = ({ email, onLogout }) => {
                   TASKS
                 </span>
               </button>
-              <button onClick={() => navigate("/Inventory")}
+              <button
+                onClick={() => navigate("/Inventory")}
                 className="flex items-center gap-3 px-3 py-3 rounded hover:bg-[#f2a20d]/10 text-[#f2a20d]/70 hover:text-[#f2a20d] transition-all group border border-transparent hover:border-[#f2a20d]/30"
               >
-                <span className="material-symbols-outlined text-2xl">inventory</span>
+                <span className="material-symbols-outlined text-2xl">
+                  inventory
+                </span>
                 <span className="hidden lg:block font-medium tracking-wide">
                   DIRECTORIES
                 </span>
@@ -109,7 +112,6 @@ const Dashboard = ({ email, onLogout }) => {
               <button
                 onClick={() => navigate("/login")}
                 className="flex items-center gap-3 px-3 py-3 rounded hover:bg-[#f2a20d]/10 text-[#f2a20d]/70 hover:text-[#f2a20d] transition-all group border border-transparent hover:border-[#f2a20d]/30"
-                
               >
                 <span className="material-symbols-outlined text-2xl">
                   exit_to_app
@@ -138,7 +140,7 @@ const Dashboard = ({ email, onLogout }) => {
                 <span className="material-symbols-outlined text-[#f2a20d] text-3xl animate-pulse">
                   memory
                 </span>
-                <h2 className="text-[#f2a20d] text-xl font-bold tracking-widest glow-text">
+                <h2 className="text-[#f2a20d] text-base font-bold tracking-widest glow-text">
                   SYSTEM_OVERVIEW // V.5.0
                 </h2>
               </div>
@@ -153,17 +155,20 @@ const Dashboard = ({ email, onLogout }) => {
                 </div>
                 {/* Action Buttons */}
                 <div className="flex gap-2">
-                  <button className="size-9 flex items-center justify-center border border-[#f2a20d]/50 rounded bg-[#f2a20d]/10 hover:bg-[#f2a20d] hover:text-[#120f0a] text-[#f2a20d] transition-colors">
+                  <button className="hidden md:block size-7 flex items-center justify-center border border-[#f2a20d]/50 rounded bg-[#f2a20d]/10 hover:bg-[#f2a20d] hover:text-[#120f0a] text-[#f2a20d] transition-colors">
                     <span className="material-symbols-outlined text-lg">
                       wifi
                     </span>
                   </button>
-                  <button className="size-9 flex items-center justify-center border border-[#f2a20d]/50 rounded bg-[#f2a20d]/10 hover:bg-[#f2a20d] hover:text-[#120f0a] text-[#f2a20d] transition-colors">
+                  <button className="hidden md:block size-7 flex items-center justify-center border border-[#f2a20d]/50 rounded bg-[#f2a20d]/10 hover:bg-[#f2a20d] hover:text-[#120f0a] text-[#f2a20d] transition-colors">
                     <span className="material-symbols-outlined text-lg">
                       notifications
                     </span>
                   </button>
-                  <button onClick={onLogout} className="size-9 flex items-center justify-center border border-[#f2a20d]/50 rounded bg-[#f2a20d]/10 hover:bg-[#f2a20d] hover:text-[#120f0a] text-[#f2a20d] transition-colors">
+                  <button
+                    onClick={onLogout}
+                    className="size-7 md:size-7 flex items-center justify-center border border-[#f2a20d]/50 rounded bg-[#f2a20d]/10 hover:bg-[#f2a20d] hover:text-[#120f0a] text-[#f2a20d] transition-colors"
+                  >
                     <span className="material-symbols-outlined text-lg">
                       power_settings_new
                     </span>
@@ -172,7 +177,7 @@ const Dashboard = ({ email, onLogout }) => {
               </div>
             </header>
             {/* DASHOARD CONTENT SCROLLABLE */}
-            <div className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8">
+            <div className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-6">
               <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 pb-10">
                 {/* MODULE 1: SYSTEM VITALITY (Large Chart) */}
                 <div className="lg:col-span-8 flex flex-col border-2 border-[#f2a20d]/30 bg-[#1a160e] rounded-sm relative overflow-hidden group hover:border-[#f2a20d]/60 transition-colors">
@@ -287,7 +292,8 @@ const Dashboard = ({ email, onLogout }) => {
                       </label>
                       <label className="flex items-start gap-4 p-4 hover:bg-[#f2a20d]/5 cursor-pointer transition-colors group">
                         <input
-                          checked={true}
+                          defaultChecked
+                          readOnly
                           className="custom-checkbox mt-1 size-5 shrink-0 appearance-none border-2 border-[#f2a20d] rounded-sm bg-transparent checked:bg-[#f2a20d] checked:border-[#f2a20d] focus:ring-0 focus:ring-offset-0 focus:outline-none transition-all"
                           type="checkbox"
                         />
@@ -345,8 +351,8 @@ const Dashboard = ({ email, onLogout }) => {
                       EVENT_LOG_STREAM
                     </h3>
                     <div className="flex gap-2">
-                      <span className="size-2 rounded-full border border-[#f2a20d]/40 bg-transparent"></span>
-                      <span className="size-2 rounded-full border border-[#f2a20d]/40 bg-transparent"></span>
+                      <span className="hidden md:block size-2 rounded-full border border-[#f2a20d]/40 bg-transparent"></span>
+                      <span className="hidden md:block size-2 rounded-full border border-[#f2a20d]/40 bg-transparent"></span>
                       <span className="size-2 rounded-full bg-[#f2a20d]/40"></span>
                     </div>
                   </div>
@@ -451,12 +457,12 @@ const Dashboard = ({ email, onLogout }) => {
                     <div className="absolute top-1/2 left-1/4 right-1/4 h-[1px] bg-[#f2a20d]/30 z-0"></div>
                     <div className="absolute left-1/2 top-1/4 bottom-1/4 w-[1px] bg-[#f2a20d]/30 z-0"></div>
                     <div
-                      className="absolute top-1/4 left-1/4 w-[50%] h-[50%] border border-[#f2a20d]/20 rounded-full z-0 animate-spin"
-                      style={{ animationDuration: "10s" }}
-                    ></div>
+                      className="absolute top-1/4 left-1/4 w-[50%] h-[50%] border border-[#f2a20d]/20 rounded-full z-0 animate-spin" style={{ animationDuration: "10s" }}></div>
                     {/* <!-- Nodes --> */}
                     <div className="relative z-10 size-10 bg-[#1a160e] border-2 border-[#f2a20d] flex items-center justify-center rounded-sm hover:bg-[#f2a20d] hover:text-[#120f0a] transition-colors cursor-pointer group">
-                      <span className="material-symbols-outlined text-sm">dns</span>
+                      <span className="material-symbols-outlined text-sm">
+                        dns
+                      </span>
                       <div className="absolute -bottom-4 text-[9px] font-mono opacity-0 group-hover:opacity-100 whitespace-nowrap text-[#f2a20d] bg-[#120f0a] px-1 border border-[#f2a20d]/50">
                         NODE_01
                       </div>
@@ -506,86 +512,83 @@ const Dashboard = ({ email, onLogout }) => {
                       </div>
                     </div>
                   </div>
-                  {/* MODULE: 5 Data Mosaic (Footer Grid) */}
-                  <div className="lg:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="bg-[#f2a20d]/5 border border-[#f2a20d]/20 p-4 rounded-sm flex items-center justify-between">
-                      <div className="flex flex-col">
-                        <span className="text-[10px] text-[#f2a20d]/60 font-mono tracking-widest">
-                          BANDWIDTH
-                        </span>
-                        <span className="text-sm font-bold font-display">
-                          4.2 TB/s
-                        </span>
-                      </div>
-                      <span className="material-symbols-outlined text-[#f2a20d]/40">
-                        speed
-                      </span>
-                    </div>
-                    <div className="bg-[#f2a20d]/5 border border-[#f2a20d]/20 p-3 rounded-sm flex items-center justify-between">
-                      <div className="flex flex-col">
-                        <span className="text-[10px] text-[#f2a20d]/60 font-mono tracking-widest">
-                          THREAT_LEVEL
-                        </span>
-                        <span className="text-sm font-bold font-display text-[#f2a20d] glow-text">
-                          LOW
-                        </span>
-                      </div>
-                      <span className="material-symbols-outlined text-[#f2a20d]/40">
-                        security
-                      </span>
-                    </div>
-                    <div className="bg-[#f2a20d]/5 border border-[#f2a20d]/20 p-3 rounded-sm flex items-center justify-between">
-                      <div className="flex flex-col">
-                        <span className="text-[10px] text-[#f2a20d]/60 font-mono tracking-widest">
-                          ACTIVE_USERS
-                        </span>
-                        <span className="text-sm font-bold font-display">842</span>
-                      </div>
-                      <span className="material-symbols-outlined text-[#f2a20d]/40">
-                        group 
-                      </span>
-                    </div>
-                    <div className="bg-[#f2a20d]/5 border border-[#f2a20d]/20 p-4 rounded-sm flex items-center justify-between">
-                      <div className="flex flex-col">
-                        <span className="text-[10px] text-[#f2a20d]/60 font-mono tracking-widest">
-                          POWER_GRID
-                        </span>
-                        <span className="text-sm font-bold font-display">
-                          STABLE
-                        </span>
-                      </div>
-                      <span className="material-symbols-outlined text-[#f2a20d]/40">
-                        bolt
-                      </span>
-                    </div>
-                  </div>
                 </div>
               </div>
-              {/* FOOTER TICKER */}
-              <footer className="h-8 bg-[#f2a20d]/10 border-t border-[#f2a20d]/30 flex items-center overflow-hidden whitespace-nowrap shrink-0">
-                <div className="animate-[marquee_20s_linear_infinite] flex gap-8 items-center text-xs font-mono text-[#f2a20d]/80">
-                  <span>/// SYSTEM STATUS: OPTIMAL</span>
-                  <span>/// SECTOR 7: SCANNED</span>
-                  <span>/// AMBER ARCHIVE: ENCRYPTED</span>
-                  <span>/// CPU TEMP: 45°C</span>
-                  <span>/// PROXY CHAIN: ACTIVE</span>
-                  <span>/// LAST BACKUP: 04:00:00</span>
-                  <span>/// SYSTEM STATUS: OPTIMAL</span>
-                  <span>/// SECTOR 7: SCANNED</span>
-                  <span>/// AMBER ARCHIVE: ENCRYPTED</span>
-                  <span>/// CPU TEMP: 45°C</span>
-                  <span>/// PROXY CHAIN: ACTIVE</span>
-                  <span>/// LAST BACKUP: 04:00:00</span>
+              {/* MODULE: 5 Data Mosaic (Footer Grid) */}
+              <div className="lg:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="bg-[#f2a20d]/5 border border-[#f2a20d]/20 p-4 rounded-sm flex items-center justify-between">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] text-[#f2a20d]/60 font-mono tracking-widest">
+                      BANDWIDTH
+                    </span>
+                    <span className="text-sm font-bold font-display">
+                      4.2 TB/s
+                    </span>
+                  </div>
+                  <span className="material-symbols-outlined text-[#f2a20d]/40">
+                    speed
+                  </span>
                 </div>
-              </footer>
+                <div className="bg-[#f2a20d]/5 border border-[#f2a20d]/20 p-3 rounded-sm flex items-center justify-between">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] text-[#f2a20d]/60 font-mono tracking-widest">
+                      THREAT_LEVEL
+                    </span>
+                    <span className="text-sm font-bold font-display text-[#f2a20d] glow-text">
+                      LOW
+                    </span>
+                  </div>
+                  <span className="material-symbols-outlined text-[#f2a20d]/40">
+                    security
+                  </span>
+                </div>
+                <div className="bg-[#f2a20d]/5 border border-[#f2a20d]/20 p-3 rounded-sm flex items-center justify-between">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] text-[#f2a20d]/60 font-mono tracking-widest">
+                      ACTIVE_USERS
+                    </span>
+                    <span className="text-sm font-bold font-display">842</span>
+                  </div>
+                  <span className="material-symbols-outlined text-[#f2a20d]/40">
+                    group
+                  </span>
+                </div>
+                <div className="bg-[#f2a20d]/5 border border-[#f2a20d]/20 p-4 rounded-sm flex items-center justify-between">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] text-[#f2a20d]/60 font-mono tracking-widest">
+                      POWER_GRID
+                    </span>
+                    <span className="text-sm font-bold font-display">
+                      STABLE
+                    </span>
+                  </div>
+                  <span className="material-symbols-outlined text-[#f2a20d]/40">
+                    bolt
+                  </span>
+                </div>
+              </div>
             </div>
+            {/* FOOTER TICKER */}
+            <footer className="h-8 bg-[#f2a20d]/10 border-t border-[#f2a20d]/30 flex items-center overflow-hidden whitespace-nowrap shrink-0">
+              <div className="animate-[marquee_20s_linear_infinite] flex gap-8 items-center text-xs font-mono text-[#f2a20d]/80">
+                <span>/// SYSTEM STATUS: OPTIMAL</span>
+                <span>/// SECTOR 7: SCANNED</span>
+                <span>/// AMBER ARCHIVE: ENCRYPTED</span>
+                <span>/// CPU TEMP: 45°C</span>
+                <span>/// PROXY CHAIN: ACTIVE</span>
+                <span>/// LAST BACKUP: 04:00:00</span>
+                <span>/// SYSTEM STATUS: OPTIMAL</span>
+                <span>/// SECTOR 7: SCANNED</span>
+                <span>/// AMBER ARCHIVE: ENCRYPTED</span>
+                <span>/// CPU TEMP: 45°C</span>
+                <span>/// PROXY CHAIN: ACTIVE</span>
+                <span>/// LAST BACKUP: 04:00:00</span>
+              </div>
+            </footer>
           </main>
         </div>
       </div>
-      <div>
-        {/* {component === "Inventory" && <Inventory />} */}
-        
-      </div>
+      <div>{/* {component === "Inventory" && <Inventory />} */}</div>
     </>
   );
 };
